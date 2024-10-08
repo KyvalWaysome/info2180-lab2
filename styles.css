@@ -1,144 +1,185 @@
+/* Global Styles */
+body {
+  font-size: 18px; /* Set the base font size */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif; /* Font family */
+  color: #2D3748; /* Default text color */
+  background-color: #F7FAFC; /* Background color for the body */
+  margin: 0;
+  padding: 0;
+}
 
-/* header part of the article styles*/
-header {
+/* Reset margins and paddings */
+h1, h2, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  font-size: 32px;
+  color: #48BB78; /* Blog post title color */
+}
+
+p {
+  margin-bottom: 20px;
+}
+
+/* Anchor Link Styling */
+a {
+  text-decoration: none;
+  color: #4299E1; /* Link color */
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Layout with CSS Grid */
+.container {
+  display: grid; /* Use Grid Layout */
+  grid-template-columns: 3fr 1fr; /* Two columns layout */
+  grid-template-rows: auto auto; /* Auto rows */
+  grid-gap: 20px; /* Gap between columns */
+  max-width: 1200px;
+  margin: 0 auto; /* Center the container */
+}
+
+/* Header Styling */
+header{
+    grid-column: 1 / 3;
     background-color: #63B3ED;
     color: #FFFFFF;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .header-content {
-    display: flex;
-    align-items: center;
-  }
-  
-  .profile-pic {
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    margin-right: 20px;
-  }
-  
-  h1 {
-    font-size: 36px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-  }
-/* main part of the artcle style*/
- 
+}
+
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center items horizontally */
+}
+
+.profile-pic {
+  border-radius: 50%; /* Make the image circular */
+  width: 150px;
+  height: 150px;
+  margin-bottom: 20px; /* Space below image */
+}
+
+h1 {
+  font-size: 36px;
+  font-family: Georgia, 'Times New Roman', Times, serif; /* Header font family */
+  margin-bottom: 10px;
+}
+
+.quote {
+  font-size: 18px;
+}
+
+/* Main Content Styling */
 main article {
-    margin-bottom: 40px;
-  }
-  
-  h2 {
-    font-size: 32px;
-    color: #48BB78;
-  }
-  
-  .post-meta {
-    color: #718096;
-    font-size: 14px;
-    margin-bottom: 10px;
-  }
-  
-  .blog-image {
-    width: 200px;
-    height: auto;
-    margin: 10px;
-  }
-  
-  .left {
-    float: left;
-  }
-  
-  .right {
-    float: right;
-  }
-  
-  
-  
-  
-  aside {
-    background-color: #eee;
-    padding: 20px;
-  }
-  
-  h3 {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    margin-bottom: 10px;
-  }
-  
-  /* sidebar styles*/
-  aside h3:first-child {
-    color: #000000;
-  }
-  
-  aside h3:not(:first-child) {
-    color: #48BB78;
-  }
-  
-  aside p {
-    background-color: #E2E8F0;
-    padding: 10px;
-    color: #000000;
-  }
-  
-  a {
-    color: #4299E1;
-    text-decoration: none;
-  }
-  
-  a:hover {
-    text-decoration: underline;
-  }
+  background-color: #FFFFFF;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #E2E8F0;
+}
 
+.Blogposts {
+  color: #718096;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
 
-  /* footer styles */
-  footer {
-    background-color: #2C5282;
-    color: #FFFFFF;
-    text-align: center;
-    padding: 10px;
-  }
-  
-/*  Grid for Layout */
+/* Blog Images */
+.blog-image {
+  width: 150px;
+  height: auto;
+  margin: 10px;
+}
+
+/* Image Floats */
+.right {
+  float: right;
+  margin-right: 20px; /* Space between image and text */
+}
+
+.left {
+  float: left;
+  margin-left: 20px; /* Space between image and text */
+}
+
+/* Sidebar Styling */
+aside {
+  background-color: #F7FAFC;
+  padding: 20px;
+  border: 1px solid #E2E8F0;
+}
+
+/* Sidebar Headings Styling */
+aside h3 {
+  font-size: 24px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin-bottom: 10px;
+}
+
+/* Sidebar Headings Color */
+#about {
+  color: #000000; /* "About" heading color */
+}
+
+#social-media, #archives {
+  color: #48BB78; /* Color for Social Media and Archives headings */
+}
+
+/* Sidebar Sections */
+aside p {
+  background-color: #E2E8F0;
+  padding: 10px;
+  color: #2D3748;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+/* Footer Styling */
+footer {
+  background-color: #2C5282;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 20px;
+  width: 100vw; /* Full width of the viewport */
+  position: relative;
+  left: 0; /* Align footer to the left */
+  grid-column: 1 / -1; /* Ensure it spans across all columns */
+  box-sizing: border-box; /* Include padding in the width */
+}
+
+/* Responsive Design for Smaller Screens */
+@media screen and (max-width: 768px) {
   .container {
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-    grid-gap: 20px;
+    grid-template-columns: 1fr; /* Single column layout */
   }
-  
-  header, footer {
-    grid-column: 1 / span 2;
+
+  .header-content {
+    flex-direction: column; /* Stack items vertically */
   }
-  
-  main {
+
+  .profile-pic {
+    margin-bottom: 20px;
+  }
+
+  .blog-image {
+    float: none;
+    display: block;
+    margin: 10px auto; /* Center the image */
+  }
+
+  main, aside {
     grid-column: 1;
   }
-  
-  aside {
-    grid-column: 2;
-  }
-  
-/* make it responsive*/
-  @media screen and (max-width: 768px) {
-    .container {
-      grid-template-columns: 1fr;
-    }
-  
-    .blog-image {
-      float: none;
-      display: block;
-      margin: 0 auto;
-    }
-  
-    main, aside {
-      grid-column: 1;
-    }
-  }
-  
-  
-  
-
+}
